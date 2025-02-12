@@ -26,3 +26,39 @@ button {
     padding: 5px 10px;
     cursor: pointer;
 }
+
+
+.add-user-button {
+    background-color: #1abc9c;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 15px;
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    width: 300px;
+    text-align: center;
+}
+
+.error-message {
+    color: red;
+    font-size: 14px;
+}

@@ -1,141 +1,18 @@
-// import React, { useState, useEffect } from 'react';
-// import { useNavigate } from 'react-router-dom';
-// import { fetchUsers, deleteUser, updateUser } from '../services/api';
-// import './ManageUsers.css';
-// import Navbar from "../components/Navbar"; // Import Navbar
-
-
-// const ManageUsers = ({ user }) => {
-//     const [users, setUsers] = useState([]);
-//     const [editingUser, setEditingUser] = useState(null);
-//     const [updatedData, setUpdatedData] = useState({ first_name: '', last_name: '' });
-//     const navigate = useNavigate();
-
-//     const handleLogout = () => {
-//         localStorage.removeItem('token');
-//         setUsers(null);
-//         navigate('/login');
-//     };
-
-//     useEffect(() => {
-//         if (!user) {
-//             navigate('/login');
-//             return;
-//         }
-//         loadUsers();
-//     }, [user]);
-
-//     const loadUsers = async () => {
-//         try {
-//             const data = await fetchUsers(user.token);
-//             setUsers(data);
-//         } catch (error) {
-//             console.error('Error fetching users:', error);
-//         }
-//     };
-
-//     const handleDelete = async (userId) => {
-//         if (window.confirm('Are you sure you want to delete this user?')) {
-//             await deleteUser(user.token, userId);
-//             loadUsers();
-//         }
-//     };
-
-//     const handleEditClick = (user) => {
-//         setEditingUser(user.id);
-//         setUpdatedData({ first_name: user.first_name, last_name: user.last_name, email: user.email });
-
-//     };
-
-//     const handleUpdate = async () => {
-//         await updateUser(user.token, editingUser, updatedData);
-//         setEditingUser(null);
-//         loadUsers();
-//     };
-
-//     return (
-//         <div className="manage-users-container">
-
-
-//             <Navbar handleLogout={handleLogout} /> {/* Use Navbar Component */}
-
-
-
-
-//             <div className="content">
-//                 <h2>Manage Users</h2>
-//                 <table>
-//                     <thead>
-//                         <tr>
-//                             <th>Name</th>
-//                             <th>Email</th>
-//                             <th>Actions</th>
-//                         </tr>
-//                     </thead>
-//                     <tbody>
-//                         {users.map((user) => (
-//                             <tr key={user.id}>
-//                                 <td>
-//                                     {editingUser === user.id ? (
-//                                         <>
-//                                             <input
-//                                                 type="text"
-//                                                 value={updatedData.first_name}
-//                                                 onChange={(e) => setUpdatedData({ ...updatedData, first_name: e.target.value })}
-//                                             />
-//                                             <input
-//                                                 type="text"
-//                                                 value={updatedData.last_name}
-//                                                 onChange={(e) => setUpdatedData({ ...updatedData, last_name: e.target.value })}
-//                                             />
-//                                             <input
-//                                                 type="email"
-//                                                 value={updatedData.email}
-//                                                 onChange={(e) => setUpdatedData({ ...updatedData, email: e.target.value })}
-//                                             />
-//                                         </>
-//                                     ) : (
-//                                         `${user.first_name} ${user.last_name}`
-//                                     )}
-//                                 </td>
-//                                 <td>{user.email}</td>
-//                                 <td>
-//                                     {editingUser === user.id ? (
-//                                         <button onClick={handleUpdate}>Save</button>
-//                                     ) : (
-//                                         <>
-//                                             <button onClick={() => handleEditClick(user)}>Edit</button>
-//                                             <button onClick={() => handleDelete(user.id)}>Delete</button>
-//                                         </>
-//                                     )}
-//                                 </td>
-//                             </tr>
-//                         ))}
-//                     </tbody>
-//                 </table>
-//             </div>
-//         </div>
-//     );
-// };
-
-// export default ManageUsers;
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { fetchUsers, deleteUser, updateUser } from '../services/api';
+import { fetchUsers, deleteUser, updateUser, createUser } from '../services/api';
 import './ManageUsers.css';
-import Navbar from '../components/Navbar'; // Import Navbar
+import Navbar from '../components/Navbar';
+import CreateUserModal from '../components/CreateUserModal';
 
 const ManageUsers = ({ user }) => {
     const [users, setUsers] = useState([]);
     const [editingUser, setEditingUser] = useState(null);
     const [updatedData, setUpdatedData] = useState({ first_name: '', last_name: '', email: '' });
+    const [showCreateUserModal, setShowCreateUserModal] = useState(false);
+    const [newUser, setNewUser] = useState({ email: '', first_name: '', last_name: '', password: '' });
+    const [error, setError] = useState('');
     const navigate = useNavigate();
-
-    const handleLogout = () => {
-        localStorage.removeItem('token');
-        setUsers([]); // Fix: Set to empty array instead of null
-        navigate('/login');
-    };
 
     useEffect(() => {
         if (!user) {
@@ -146,11 +23,9 @@ const ManageUsers = ({ user }) => {
     }, [user]);
 
     const loadUsers = async () => {
-        if (!user?.token) return; // Fix: Ensure token exists before fetching
-
         try {
             const data = await fetchUsers(user.token);
-            setUsers(data || []); // Fix: Ensure users is always an array
+            setUsers(data);
         } catch (error) {
             console.error('Error fetching users:', error);
         }
@@ -158,12 +33,8 @@ const ManageUsers = ({ user }) => {
 
     const handleDelete = async (userId) => {
         if (window.confirm('Are you sure you want to delete this user?')) {
-            try {
-                await deleteUser(user.token, userId);
-                loadUsers();
-            } catch (error) {
-                console.error('Error deleting user:', error);
-            }
+            await deleteUser(user.token, userId);
+            loadUsers();
         }
     };
 
@@ -173,20 +44,38 @@ const ManageUsers = ({ user }) => {
     };
 
     const handleUpdate = async () => {
+        await updateUser(user.token, editingUser, updatedData);
+        setEditingUser(null);
+        loadUsers();
+    };
+
+    const handleCreateUser = async () => {
+        if (!newUser.email || !newUser.first_name || !newUser.last_name || !newUser.password) {
+            setError('All fields are required.');
+            return;
+        }
+
         try {
-            await updateUser(user.token, editingUser, updatedData);
-            setEditingUser(null);
+            await createUser(user.token, newUser);
+            setShowCreateUserModal(false);
+            setNewUser({ email: '', first_name: '', last_name: '', password: '' });
+            setError('');
             loadUsers();
         } catch (error) {
-            console.error('Error updating user:', error);
+            setError('Failed to create user. Please try again.');
+            console.error('Failed to create user:', error);
         }
     };
 
     return (
         <div className="manage-users-container">
-            <Navbar handleLogout={handleLogout} /> {/* Navbar Component */}
-            <div className="main-content">
+            <Navbar />
+            <div className="content">
                 <h2>Manage Users</h2>
+                <button className="add-user-button" onClick={() => setShowCreateUserModal(true)}>
+                    + Add User
+                </button>
+
                 <table>
                     <thead>
                         <tr>
@@ -196,59 +85,44 @@ const ManageUsers = ({ user }) => {
                         </tr>
                     </thead>
                     <tbody>
-                        {users.length > 0 ? (
-                            users.map((user) => (
-                                <tr key={user.id}>
-                                    <td>
-                                        {editingUser === user.id ? (
-                                            <>
-                                                <input
-                                                    type="text"
-                                                    value={updatedData.first_name}
-                                                    onChange={(e) =>
-                                                        setUpdatedData({ ...updatedData, first_name: e.target.value })
-                                                    }
-                                                />
-                                                <input
-                                                    type="text"
-                                                    value={updatedData.last_name}
-                                                    onChange={(e) =>
-                                                        setUpdatedData({ ...updatedData, last_name: e.target.value })
-                                                    }
-                                                />
-                                                <input
-                                                    type="email"
-                                                    value={updatedData.email}
-                                                    onChange={(e) =>
-                                                        setUpdatedData({ ...updatedData, email: e.target.value })
-                                                    }
-                                                />
-                                            </>
-                                        ) : (
-                                            `${user.first_name} ${user.last_name}`
-                                        )}
-                                    </td>
-                                    <td>{user.email}</td>
-                                    <td>
-                                        {editingUser === user.id ? (
-                                            <button onClick={handleUpdate}>Save</button>
-                                        ) : (
-                                            <>
-                                                <button onClick={() => handleEditClick(user)}>Edit</button>
-                                                <button onClick={() => handleDelete(user.id)}>Delete</button>
-                                            </>
-                                        )}
-                                    </td>
-                                </tr>
-                            ))
-                        ) : (
-                            <tr>
-                                <td colSpan="3" style={{ textAlign: 'center' }}>No users found</td>
+                        {users.map((user) => (
+                            <tr key={user.id}>
+                                <td>
+                                    {editingUser === user.id ? (
+                                        <>
+                                            <input type="text" value={updatedData.first_name} onChange={(e) => setUpdatedData({ ...updatedData, first_name: e.target.value })} />
+                                            <input type="text" value={updatedData.last_name} onChange={(e) => setUpdatedData({ ...updatedData, last_name: e.target.value })} />
+                                            <input type="email" value={updatedData.email} onChange={(e) => setUpdatedData({ ...updatedData, email: e.target.value })} />
+                                        </>
+                                    ) : (
+                                        `${user.first_name} ${user.last_name}`
+                                    )}
+                                </td>
+                                <td>{user.email}</td>
+                                <td>
+                                    {editingUser === user.id ? (
+                                        <button onClick={handleUpdate}>Save</button>
+                                    ) : (
+                                        <>
+                                            <button onClick={() => handleEditClick(user)}>Edit</button>
+                                            <button onClick={() => handleDelete(user.id)}>Delete</button>
+                                        </>
+                                    )}
+                                </td>
                             </tr>
-                        )}
+                        ))}
                     </tbody>
                 </table>
             </div>
+
+            {showCreateUserModal && (
+                <CreateUserModal 
+                    newUser={newUser} 
+                    setNewUser={setNewUser} 
+                    handleCreateUser={handleCreateUser} 
+                    onClose={() => setShowCreateUserModal(false)} 
+                />
+            )}
         </div>
     );
 };

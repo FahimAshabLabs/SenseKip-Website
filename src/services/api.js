@@ -35,3 +35,22 @@ export const updateUser = async (token, userId, updatedData) => {
     return response.data;
 };
 
+export const createUser = async (token, userData) => {
+    try {
+        const response = await axios.post(`${API_BASE_URL}/accounts/users/`, userData, {
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Token ${token}`
+            }
+        });
+
+        if (!response.status === 201) {
+            throw new Error('Failed to create user');
+        }
+
+        return response.data;
+    } catch (error) {
+        console.error('Error creating user:', error);
+        throw error;
+    }
+};
