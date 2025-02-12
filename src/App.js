@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import Login from './pages/Login';
 import Dashboard from './pages/Dashboard';
+import ManageUsers from './pages/ManageUsers';
 
 const App = () => {
     const [user, setUser] = useState(localStorage.getItem('token') ? { token: localStorage.getItem('token') } : null);
@@ -19,7 +20,9 @@ const App = () => {
                 The /dashboard path renders the Dashboard component if a user is 
                 authenticated (user is not null). If not, it redirects to the login page using the Navigate component */}
                 <Route path="/dashboard" element={user ? <Dashboard setUser={setUser} /> : <Navigate to="/login" />} />
-                <Route path="*" element={<Navigate to="/login" />} />
+                <Route path="*" element={user ? <Dashboard setUser={setUser} /> : <Navigate to="/login" />} />
+                <Route path="/manage-users" element={user ? <ManageUsers user={user} /> : <Navigate to="/login" />} />
+
             </Routes>
         </Router>
     );

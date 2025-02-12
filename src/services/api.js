@@ -13,3 +13,25 @@ export const fetchUserProfile = async (token) => {
     });
     return response.data;
 };
+
+export const fetchUsers = async (token) => {
+    const response = await axios.get(`${API_BASE_URL}/accounts/users/`, {
+        headers: { Authorization: `Token ${token}` }
+    });
+    return response.data;
+};
+
+export const deleteUser = async (token, userId) => {
+    await axios.delete(`${API_BASE_URL}/accounts/users/${userId}/`, {
+        headers: { Authorization: `Token ${token}` }
+    });
+};
+
+export const updateUser = async (token, userId, updatedData) => {
+    const response = await axios.put(`${API_BASE_URL}/accounts/users/${userId}/`, updatedData, {
+        headers: { Authorization: `Token ${token}` }
+    });
+    console.log(userId, updatedData);
+    return response.data;
+};
+

@@ -33,6 +33,8 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Dashboard.css'; // Import the CSS file
+import Navbar from "../components/Navbar"; // Import Navbar
+
 
 const Dashboard = ({ setUser }) => {
     const navigate = useNavigate();
@@ -44,19 +46,10 @@ const Dashboard = ({ setUser }) => {
     };
 
     return (
+       
         <div className="dashboard-container">
-            <nav className="sidebar">
-                <ul>
-                    <li><a href="/dashboard" className="sidebar-link">Home</a></li>
-                    <li><a href="/dashboard" className="sidebar-link">Profile</a></li>
-                    <li><a href="/manage-users" className="sidebar-link">Manage Users</a></li>
-                    <li><a href="/manage-devices" className="sidebar-link">Manage Devices</a></li>
-                    <li><a href="/manage-devices" className="sidebar-link">Settings</a></li>
-                    <button onClick={handleLogout} className="logout-button">Logout</button>
-                </ul>
-            </nav>
+            <Navbar handleLogout={handleLogout} /> {/* Use Navbar Component */}
             <main className="main-content">
-                {/* <button onClick={handleLogout} className="logout-button">Logout</button> */}
                 <h2>Welcome to the Corporate Dashboard</h2>
             </main>
         </div>
