@@ -54,3 +54,41 @@ export const createUser = async (token, userData) => {
         throw error;
     }
 };
+
+export const fetchDevices = async (token) => {
+    const response = await axios.get(`${API_BASE_URL}/dev/devices/`, {
+        headers: { Authorization: `Token ${token}` }
+    });
+    return response.data;
+};
+
+export const createDevice = async (token, deviceData) => {
+    const response = await axios.post(`${API_BASE_URL}/dev/devices/`, deviceData, {
+        headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Token ${token}`
+        }
+    });
+    return response.data;
+};
+
+export const updateDevice = async (token, deviceId, updatedData) => {
+    const response = await axios.put(`${API_BASE_URL}/dev/devices/${deviceId}/`, updatedData, {
+        headers: { Authorization: `Token ${token}` }
+    });
+    return response.data;
+};
+
+export const deleteDevice = async (token, deviceId) => {
+    await axios.delete(`${API_BASE_URL}/dev/devices/${deviceId}/`, {
+        headers: { Authorization: `Token ${token}` }
+    });
+};
+
+export const assignDevice = async (token, deviceId, professionalId) => {
+    const response = await axios.post(`${API_BASE_URL}/dev/devices/${deviceId}/assign/`, 
+        { professional_id: professionalId },
+        { headers: { Authorization: `Token ${token}` } }
+    );
+    return response.data;
+};

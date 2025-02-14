@@ -1,8 +1,28 @@
 .manage-users-container {
     display: flex;
     height: 100vh;
+    background-color: white
 }
 
+.manage-users {
+    padding: 20px;
+    background-color: white; /* Set background color to white */
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.manage-users-page {
+    display: flex;
+}
+
+.manage-users-content {
+    flex: 1;
+    padding: 20px;
+    background-color: white; /* Set background color to white */
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-left: 0; /* Adjust margin if needed */
+}
 
 .content {
     flex-grow: 1;
@@ -26,7 +46,6 @@ button {
     padding: 5px 10px;
     cursor: pointer;
 }
-
 
 .add-user-button {
     background-color: #1abc9c;

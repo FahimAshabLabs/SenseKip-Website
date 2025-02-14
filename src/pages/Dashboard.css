@@ -2,7 +2,7 @@
 
 body {
     font-family: 'Arial', sans-serif;
-    background-color: #f7f7f7;
+    background-color: white; /* Set background color to white */
     margin: 0;
     padding: 0;
 }
@@ -12,6 +12,18 @@ body {
     height: 100vh;
 }
 
+.dashboard-page {
+    display: flex;
+}
+
+.dashboard-content {
+    flex: 1;
+    padding: 20px;
+    background-color: white; /* Set background color to white */
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-left: 0; /* Adjust margin if needed */
+}
 
 .logout-button {
     background-color: #e74c3c;
