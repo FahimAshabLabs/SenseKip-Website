@@ -1,84 +1,83 @@
-import React, { useEffect, useState } from "react";
-import axios from "axios";
+import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { fetchDevices, fetchInfluxData } from '../services/api';
+import './TestPage.css';
+import Navbar from '../components/Navbar';
 
-const INFLUXDB_URL = "http://3.140.62.93:8086/api/v2/query";
-const INFLUXDB_TOKEN = "rpktxQo57e1GTQPuBXp6rla5sdS8_IGqesmxPWC5W3VlKWtW7H3ZtnydsvavuswCdjn16LBVsiwXfyysPqMAhw==";
-const INFLUXDB_ORG = "SenseKip";
-const INFLUXDB_BUCKET = "Sensor_Data_1";
+const ManageDevices2 = ({ user }) => {
+    const [devices, setDevices] = useState([]);
+    const [error, setError] = useState('');
+    const navigate = useNavigate();
 
-const InfluxTable = () => {
-  const [sensorData, setSensorData] = useState([]);
+    useEffect(() => {
+        if (!user) {
+            navigate('/login');
+            return;
+        }
+        loadDeviceData();
+    }, [user]);
 
-  useEffect(() => {
-    const fetchData = async () => {
-      const fluxQuery = `
-        from(bucket: "${INFLUXDB_BUCKET}")
-          |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
-          |> filter(fn: (r) => r["_measurement"] == "SensorReading")
-          |> aggregateWindow(every: v.windowPeriod, fn: mean, createEmpty: false)
-          |> yield(name: "mean")
-      `;
+    const loadDeviceData = async () => {
+        try {
+            console.log("Fetching device serials...");
+            const deviceList = await fetchDevices(user.token);
+            const deviceSerials = deviceList.map(device => device.serial_number);
+            console.log("Device serials:", deviceSerials);
 
-      try {
-        const response = await axios.post(
-          INFLUXDB_URL,
-          {
-            query: fluxQuery,
-            dialect: { annotations: ["group", "datatype", "default"] }, // Required for structured response
-          },
-          {
-            headers: {
-              Authorization: `Token ${INFLUXDB_TOKEN}`,
-              "Content-Type": "application/json",
-              Accept: "application/csv",
-            },
-            params: { org: INFLUXDB_ORG },
-          }
-        );
-
-        // Parse CSV response manually
-        const rows = response.data.split("\n").slice(1); // Skip header
-        const formattedData = rows
-          .map((row) => row.split(","))
-          .filter((cols) => cols.length > 1)
-          .map((cols) => ({
-            deviceSerial: cols[7], // Assuming 'deviceSerial' is at index 3
-            sensorValue: cols[6], // Assuming '_value' is at index 6
-          }));
-
-        setSensorData(formattedData);
-      } catch (error) {
-        console.error("Error fetching data from InfluxDB:", error);
-      }
+            const data = await fetchInfluxData(user.token, deviceSerials);
+            console.log("Fetched device data:", data);
+            setDevices(Object.entries(data));
+        } catch (error) {
+            console.error('Error fetching device data:', error);
+            setError('Failed to load device data.');
+        }
     };
 
-    fetchData();
-  }, []);
-
-  return (
-    <table border="1">
-      <thead>
-        <tr>
-          <th>Device Serial</th>
-          <th>Sensor de pressão 1</th>
-        </tr>
-      </thead>
-      <tbody>
-        {sensorData.length > 0 ? (
-          sensorData.map((row, index) => (
-            <tr key={index}>
-              <td>{row.deviceSerial}</td>
-              <td>{row.sensorValue}</td>
-            </tr>
-          ))
-        ) : (
-          <tr>
-            <td colSpan="2">No data available</td>
-          </tr>
-        )}
-      </tbody>
-    </table>
-  );
+    return (
+        <div className="manage-devices-container">
+            <Navbar />
+            <div className="content">
+                <h2>Live Data</h2>
+                {error && <p className="error">{error}</p>}
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Serial Number</th>
+                            <th colSpan="3">Sensor 1 (psi)</th>
+                            <th colSpan="3">Sensor 2 (psi)</th>
+                            <th>Dashboard</th>
+                        </tr>
+                        <tr className="sub-header">
+                            <th></th>
+                            <th>Reading</th>
+                            <th>Parameters</th>
+                            <th>Status</th>
+                            <th>Reading</th>
+                            <th>Parameters</th>
+                            <th>Status</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {devices.map(([serial, device]) => (
+                            <tr key={serial}>
+                                <td>{serial}</td>
+                                <td>{device.sensor1}</td>
+                                <td>{`On: ${device.relay1.switchOnPoint}, Off: ${device.relay1.switchOffPoint}`}</td>
+                                <td>{device.relay1.state ? 'On' : 'Off'}</td>
+                                <td>{device.sensor2}</td>
+                                <td>{`On: ${device.relay2.switchOnPoint}, Off: ${device.relay2.switchOffPoint}`}</td>
+                                <td>{device.relay2.state ? 'On' : 'Off'}</td>
+                                <td>
+                                    <button onClick={() => navigate(`/dashboard/${serial}`)}>View</button>
+                                </td>
+                            </tr>
+                        ))}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    );
 };
 
-export default InfluxTable;
+export default ManageDevices2;

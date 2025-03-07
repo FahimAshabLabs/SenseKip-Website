@@ -92,3 +92,26 @@ export const assignDevice = async (token, deviceId, professionalId) => {
     );
     return response.data;
 };
+
+
+export const fetchInfluxData = async (token, deviceSerials) => {
+    try {
+        console.log("Sending request to InfluxDB with serials:", deviceSerials);
+
+        const response = await axios.post(`${API_BASE_URL}/influx/get_device_data`, 
+            { deviceSerials }, // Ensure it's sent as an array inside an object
+            {
+                headers: {
+                    Authorization: `Bearer ${token}`,
+                    'Content-Type': 'application/json',
+                },
+            }
+        );
+
+        console.log("InfluxDB Response:", response.data);
+        return response.data;
+    } catch (error) {
+        console.error('Error fetching InfluxDB data:', error);
+        throw error;
+    }
+};

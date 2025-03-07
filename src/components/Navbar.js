@@ -14,7 +14,7 @@ const Navbar = () => {
     return (
         <nav className="sidebar">
             <ul>
-                <li><Link to="/dashboard" className="sidebar-link">Home</Link></li>
+                <li><Link to="/table" className="sidebar-link">Home</Link></li>
                 <li><Link to="/dashboard" className="sidebar-link">Profile</Link></li>
                 <li><Link to="/manage-users" className="sidebar-link">Manage Users</Link></li>
                 <li><Link to="/manage-devices" className="sidebar-link">Manage Devices</Link></li>

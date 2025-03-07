@@ -96,3 +96,30 @@
     background-color: #c0392b;
     transform: scale(1.05);
 }
+
+.device-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.device-table th, .device-table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+}
+
+.device-table th {
+    background-color: #f2f2f2;
+}
+
+.edit-button, .delete-button, .assign-button {
+    margin: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.assign-dropdown {
+    margin: 5px;
+    padding: 5px;
+}
