@@ -13,7 +13,8 @@ const App = () => {
         <Router>
             <Routes>
                 <Route path="/login" element={<Login setUser={setUser} />} />
-                <Route path="/dashboard" element={user ? <Dashboard setUser={setUser} /> : <Navigate to="/login" />} />
+                <Route path="/dashboard/:serial" element={user ? <Dashboard setUser={setUser} /> : <Navigate to="/login" />} />
+
                 <Route path="*" element={user ? <Dashboard setUser={setUser} /> : <Navigate to="/login" />} />
                 <Route path="/manage-users" element={user ? <ManageUsers user={user} /> : <Navigate to="/login" />} />
                 <Route path="/manage-devices" element={user ? <ManageDevices user={user} /> : <Navigate to="/login" />} />
