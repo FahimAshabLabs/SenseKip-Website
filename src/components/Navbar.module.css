@@ -63,9 +63,9 @@
     transform: scale(1.05);
 } */
 
-
+/* 
 .navbar {
-    width: 100%; /* Ensure the navbar spans the full width */
+    width: 100%; 
     height: 60px;
     background: #131417;
     padding: 0 20px;
@@ -78,7 +78,7 @@
     left: 0;
     z-index: 1000;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-    box-sizing: border-box; /* Ensure padding is included in the width */
+    box-sizing: border-box; 
 }
 
 .logo {
@@ -92,8 +92,8 @@
     margin: 0;
     padding: 0;
     gap: 20px;
-    flex-grow: 1; /* Allow the navLinks to grow and take available space */
-    margin-left: 20px; /* Add some spacing between logo and navLinks */
+    flex-grow: 1; 
+    margin-left: 20px; 
 }
 
 .navLinks li {
@@ -125,7 +125,7 @@
     font-weight: bold;
     cursor: pointer;
     transition: background 0.3s, transform 0.2s;
-    margin-left: auto; /* Push the logout button to the far right */
+    margin-left: auto; 
 }
 
 .logout-button:hover {
@@ -133,19 +133,139 @@
     transform: scale(1.05);
 }
 
-/* Responsive Design */
 @media (max-width: 768px) {
     .navLinks {
-        gap: 10px; /* Reduce gap for smaller screens */
+        gap: 10px;
     }
 
     .navbar-link {
-        padding: 8px 12px; /* Reduce padding for smaller screens */
+        padding: 8px 12px; 
         font-size: 0.9rem;
     }
 
     .logout-button {
-        padding: 8px 16px; /* Reduce padding for smaller screens */
+        padding: 8px 16px; 
         font-size: 12px;
+    }
+} */
+
+
+
+/* Navbar Container */
+.navbar {
+    width: 100%;
+    height: 70px;
+    background: #131417;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    box-sizing: border-box;
+}
+
+/* Left Side - Logo & Company Name */
+.logoContainer {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: white;
+    transition: transform 0.3s ease-in-out;
+}
+
+.logoContainer:hover {
+    transform: scale(1.05);
+}
+
+.logoIcon {
+    font-size: 2.5rem;
+    color: #00d8ff; /* React logo color - replace with your logo */
+    animation: spinLogo 6s linear infinite;
+}
+
+@keyframes spinLogo {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.companyText {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #f1c40f;
+}
+
+/* Navigation Links */
+.navLinks {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    gap: 25px;
+    font-size: 1rem;
+}
+
+.navLinks li {
+    display: flex;
+    align-items: center;
+}
+
+.navbarLink {
+    text-decoration: none;
+    color: white;
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 10px 15px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: transform 0.3s ease, background 0.3s;
+}
+
+.navbarLink:hover {
+    background-color: rgba(255, 215, 0, 0.2);
+    transform: translateY(-3px);
+}
+
+/* Right Side - Logout */
+.logoutContainer {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px;
+    border-radius: 50%;
+    background: linear-gradient(to right, #e74c3c, #c0392b);
+    transition: transform 0.3s ease, background 0.3s;
+}
+
+.logoutContainer:hover {
+    background: linear-gradient(to right, #c0392b, #922b21);
+    transform: scale(1.1);
+}
+
+.logoutIcon {
+    font-size: 1.5rem;
+    color: white;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .navLinks {
+        gap: 15px;
+    }
+
+    .navbarLink {
+        font-size: 0.9rem;
+    }
+
+    .logoutIcon {
+        font-size: 1.2rem;
     }
 }
