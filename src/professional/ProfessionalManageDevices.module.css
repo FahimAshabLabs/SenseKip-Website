@@ -62,7 +62,7 @@
 
 /* ✅ Center Content and Fix Table */
 .devicesContent {
-    width: 80%;
+    width: 90%;
     margin-top: 20px;
     padding: 20px;
     background: white;
@@ -83,6 +83,6 @@
 }
 
 .deviceTable th {
-    background-color: #3498db;
+    background-color: #4CAF50;
     color: white;
 }
