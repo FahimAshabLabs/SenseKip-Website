@@ -1,0 +1,264 @@
+/* Login.module.css
+
+body {
+    background: linear-gradient(to right, #f2f0f5, #c6d2e7);
+    font-family: 'Arial', sans-serif;
+}
+
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.login-form {
+    background: #fff;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 300px;
+}
+
+.login-form h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
+}
+
+.login-form input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.login-form input:focus {
+    border-color: #6a11cb;
+    outline: none;
+}
+
+.login-form button {
+    background: #6a11cb;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.login-form button:hover {
+    background: #2575fc;
+}
+
+.error {
+    color: red;
+    margin-top: 10px;
+} */
+
+
+body1 {
+    background: linear-gradient(to right, #4facfe, #00f2fe); /* Elegant gradient */
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: gradientBackground 8s infinite alternate;
+}
+
+/* Gradient background animation */
+@keyframes gradientBackground {
+    0% {
+        background: linear-gradient(to right, #4facfe, #00f2fe);
+    }
+    50% {
+        background: linear-gradient(to right, #43e97b, #38f9d7);
+    }
+    100% {
+        background: linear-gradient(to right, #fa709a, #fee140);
+    }
+}
+
+.loginContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+}
+
+.loginForm {
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    width: 400px;
+    max-width: 90%;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Form Heading */
+.loginForm h2 {
+    margin-bottom: 10px;
+    font-size: 30px;
+    color: #2c3e50;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.loginForm p {
+    margin-bottom: 20px;
+    color: #7f8c8d;
+    font-size: 15px;
+}
+
+/* Toggle Button Slider for Corporate and Professional */
+.toggleContainer {
+    display: flex;
+    justify-content: space-between;
+    background: #f1f1f1;
+    border-radius: 50px;
+    padding: 5px;
+    margin-bottom: 20px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.toggleContainer:before {
+    content: "";
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(to right, #6a11cb, #2575fc);
+    border-radius: 50px;
+    z-index: 1;
+    transition: all 0.5s ease; /* Smooth sliding effect */
+    transform: translateX(0%);
+}
+
+.toggleButton {
+    flex: 1;
+    padding: 12px 15px;
+    border: none;
+    border-radius: 50px;
+    background: transparent;
+    color: #666;
+    font-size: 14px;
+    font-weight: bold;
+    z-index: 2; /* Ensure button text stays on top */
+    cursor: pointer;
+    transition: color 0.3s ease, transform 0.5s ease;
+}
+
+.toggleButton.active {
+    color: white;
+}
+
+.toggleButton:first-child.active + .toggleButton:before {
+    transform: translateX(0); /* Corporate mode */
+}
+
+.toggleButton:last-child.active + .toggleButton:before {
+    transform: translateX(100%); /* Professional mode */
+}
+
+/* Input Fields */
+.input {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    font-size: 15px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.input:focus {
+    border-color: #6a11cb;
+    box-shadow: 0 0 5px rgba(106, 17, 203, 0.5); /* Soft glow effect */
+    outline: none;
+}
+
+/* Login Button */
+.button {
+    width: 100%;
+    padding: 12px;
+    background: linear-gradient(to right, #6a11cb, #2575fc);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s ease, transform 0.2s ease;
+    margin-top: 10px;
+}
+
+.button:hover {
+    background: linear-gradient(to right, #43e97b, #38f9d7);
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(67, 233, 123, 0.6);
+}
+
+/* Error Message */
+.error {
+    color: #e74c3c;
+    margin-top: 10px;
+    font-size: 14px;
+    animation: shake 0.3s ease-in-out;
+}
+
+@keyframes shake {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    25% {
+        transform: translateX(-4px);
+    }
+    50% {
+        transform: translateX(4px);
+    }
+    75% {
+        transform: translateX(-4px);
+    }
+}
+
+/* Additional Links */
+.links {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.links a {
+    color: #6a11cb;
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s ease;
+}
+
+.links a:hover {
+    color: #2575fc;
+    text-shadow: 0 0 8px rgba(37, 117, 252, 0.5);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}

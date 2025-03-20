@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { fetchDevices, fetchInfluxData } from '../services/api';
-import './TestPage.css';
 import Navbar from '../components/Navbar';
+import styles from './TestPage.module.css';  // Import the CSS module
 
 const ManageDevices2 = ({ user }) => {
     const [devices, setDevices] = useState([]);
@@ -34,20 +34,20 @@ const ManageDevices2 = ({ user }) => {
     };
 
     return (
-        <div className="manage-devices-container">
+        <div className={styles.manageDevicesContainer}>
             <Navbar />
-            <div className="content">
+            <div className={styles.content}>
                 <h2>Live Data</h2>
-                {error && <p className="error">{error}</p>}
+                {error && <p className={styles.error}>{error}</p>}
                 <table>
                     <thead>
                         <tr>
-                            <th>Serial Number</th>
+                            <th className={styles.serialColumn}>Serial Number</th>
                             <th colSpan="3">Sensor 1 (psi)</th>
                             <th colSpan="3">Sensor 2 (psi)</th>
                             <th>Dashboard</th>
                         </tr>
-                        <tr className="sub-header">
+                        <tr className={styles.subHeader}>
                             <th></th>
                             <th>Reading</th>
                             <th>Parameters</th>
@@ -60,7 +60,7 @@ const ManageDevices2 = ({ user }) => {
                     </thead>
                     <tbody>
                         {devices.map(([serial, device]) => (
-                            <tr key={serial}>
+                            <tr key={serial} className={styles.deviceRow}>
                                 <td>{serial}</td>
                                 <td>{device.sensor1}</td>
                                 <td>{`On: ${device.relay1.switchOnPoint}, Off: ${device.relay1.switchOffPoint}`}</td>
@@ -69,7 +69,7 @@ const ManageDevices2 = ({ user }) => {
                                 <td>{`On: ${device.relay2.switchOnPoint}, Off: ${device.relay2.switchOffPoint}`}</td>
                                 <td>{device.relay2.state ? 'On' : 'Off'}</td>
                                 <td>
-                                    <button onClick={() => navigate(`/dashboard/${serial}`)}>View</button>
+                                    <button className={styles.viewButton} onClick={() => navigate(`/dashboard/${serial}`)}>View</button>
                                 </td>
                             </tr>
                         ))}

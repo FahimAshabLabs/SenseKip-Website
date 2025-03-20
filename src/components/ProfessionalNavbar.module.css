@@ -1,0 +1,164 @@
+/* .proNavbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    background-color: #ffffff;
+    padding: 10px 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .proNavbarLeft {
+    display: flex;
+    align-items: center;
+  }
+  
+  .proNavbarLeft img {
+    height: 50px;
+    margin-right: 10px;
+  }
+  
+  .proNavbarRight {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  .proNavbarRight img {
+    height: 30px;
+  }
+  
+  .proNavbarRight a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+  }
+  
+  .proNavbarRight .navLink {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+  }
+  
+  .proLogoutButton {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .proLogoutButton:hover {
+    background-color: #c0392b;
+  }
+   */
+
+
+
+   /* src/components/ProfessionalNavbar.module.css */
+
+.proNavbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  background-color: #ffffff;
+  padding: 15px 30px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.proNavbarLeft {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.proNavbarLeft img {
+  height: 50px;
+  transition: transform 0.3s ease;
+}
+
+.proNavbarLeft img:hover {
+  transform: scale(1.1);
+}
+
+.heading {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #2c3e50;
+  margin: 0;
+}
+
+.proNavbarRight {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.navItem {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  position: relative;
+}
+
+.navIcon {
+  height: 30px;
+  transition: transform 0.3s ease;
+}
+
+.navItem:hover .navIcon {
+  transform: rotate(10deg) scale(1.1);
+}
+
+.navLink {
+  text-decoration: none;
+  color: #34495e;
+  font-weight: 500;
+  font-size: 1rem;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.navLink::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #3498db;
+  transition: width 0.3s ease;
+}
+
+.navLink:hover::after {
+  width: 100%;
+}
+
+.navLink:hover {
+  color: #3498db;
+}
+
+.proLogoutButton {
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.proLogoutButton:hover {
+  background-color: #c0392b;
+  transform: translateY(-2px);
+}
+
+.proLogoutButton:active {
+  transform: translateY(0);
+}

@@ -1,5 +1,6 @@
+
 import React, { useState, useEffect } from 'react';
-import './ManageDevices.css';
+import styles from './ManageDevices.module.css';  // Importing the CSS Module
 import { fetchDevices, createDevice, updateDevice, deleteDevice, assignDevice, fetchUsers } from '../services/api';
 import Navbar from '../components/Navbar';
 
@@ -91,16 +92,16 @@ const ManageDevices = ({ user }) => {
     };
 
     return (
-        <div className="manage-devices-page">
+        <div className={styles.manageDevicesPage}>  {/* Using styles from CSS Module */}
             <Navbar />
-            <div className="manage-devices-content">
+            <div className={styles.manageDevicesContent}>  {/* Using styles from CSS Module */}
                 <h2>Manage Devices</h2>
                 {error && <p className="error">{error}</p>}
 
-                <button className="add-device-button" onClick={handleAddDeviceClick}>Add Device</button>
+                <button className={styles.addDeviceButton} onClick={handleAddDeviceClick}>Add Device</button>
 
                 {showInputBox && (
-                    <div className="input-box">
+                    <div className={styles.inputBox}>
                         <input type="text" name="serial_number" value={deviceData.serial_number} onChange={handleInputChange} placeholder="Enter Serial Number" />
                         <input type="text" name="device_type" value={deviceData.device_type} onChange={handleInputChange} placeholder="Enter Device Type" />
                         <input type="text" name="location" value={deviceData.location} onChange={handleInputChange} placeholder="Enter Location" />
@@ -108,7 +109,7 @@ const ManageDevices = ({ user }) => {
                     </div>
                 )}
 
-                <table className="device-table">
+                <table className={styles.deviceTable}>  {/* Using styles from CSS Module */}
                     <thead>
                         <tr>
                             <th>Serial Number</th>
@@ -126,9 +127,9 @@ const ManageDevices = ({ user }) => {
                                 <td>{device.location}</td>
                                 <td>{getProfessionalName(device.assigned_to)}</td>
                                 <td>
-                                    <button className="edit-button" onClick={() => handleEditDevice(device)}>Edit</button>
-                                    <button className="delete-button" onClick={() => handleDeleteDevice(device.id)}>Delete</button>
-                                    <select className="assign-dropdown" value={selectedProfessionalId} onChange={(e) => setSelectedProfessionalId(e.target.value)}>
+                                    <button className={styles.editButton} onClick={() => handleEditDevice(device)}>Edit</button>
+                                    <button className={styles.deleteButton} onClick={() => handleDeleteDevice(device.id)}>Delete</button>
+                                    <select className={styles.assignDropdown} value={selectedProfessionalId} onChange={(e) => setSelectedProfessionalId(e.target.value)}>
                                         <option value="">Select Professional</option>
                                         {professionals.map(professional => (
                                             <option key={professional.id} value={professional.id}>
@@ -136,7 +137,7 @@ const ManageDevices = ({ user }) => {
                                             </option>
                                         ))}
                                     </select>
-                                    <button className="assign-button" onClick={() => handleAssignDevice(device.id)}>Assign</button>
+                                    <button className={styles.assignButton} onClick={() => handleAssignDevice(device.id)}>Assign</button>
                                 </td>
                             </tr>
                         ))}

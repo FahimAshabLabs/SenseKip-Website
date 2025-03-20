@@ -1,16 +1,21 @@
-/* Container styling */
-.manage-devices-container {
+.manageDevicesContainer {
     display: flex;
     height: 100vh;
     background-color: #f4f6f9;
+    flex-direction: column; 
+    margin-top: 60px;
 }
 
-/* Content area */
+
+
+
+
+
 .content {
     flex: 1;
     padding: 20px;
-    margin-left: 0; 
-    width: calc(100% - 250px); 
+    margin-left: 0;
+    width: calc(100% - 250px);
     overflow-x: auto;
 }
 
@@ -20,14 +25,12 @@ h2 {
     margin-bottom: 20px;
 }
 
-/* Error message styling */
 .error {
     color: #e74c3c;
     font-size: 16px;
     margin-bottom: 10px;
 }
 
-/* Table styling */
 table {
     width: 100%;
     border-collapse: collapse;
@@ -37,7 +40,6 @@ table {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Table Header */
 thead {
     background-color: #e4ecf5;
     color: white;
@@ -48,16 +50,14 @@ th {
     text-align: left;
     font-size: 16px;
     word-wrap: break-word;
-    font-weight: bold; /* Make the text bold */
-    color: black; /* Change text color to black */
+    font-weight: bold;
+    color: black;
 }
 
-/* Serial Column */
-.serial-column {
+.serialColumn {
     width: 12%;
 }
 
-/* Table Body */
 tbody tr {
     border-bottom: 1px solid #ddd;
     transition: background 0.2s ease-in-out;
@@ -67,24 +67,20 @@ tbody tr:hover {
     background-color: #f8f9fa;
 }
 
-/* Table Cells */
 td {
     padding: 12px;
     font-size: 14px;
 }
 
-/* Device row hover effect */
-.device-row:hover {
+.deviceRow:hover {
     background-color: #ecf0f1;
 }
 
-/* Sensor and Relay Styling */
 td div {
     margin: 5px 0;
 }
 
-/* Status Indicator */
-.status-indicator {
+.statusIndicator {
     display: inline-block;
     padding: 5px;
     border-radius: 8px;
@@ -93,17 +89,16 @@ td div {
     width: 50px;
 }
 
-.status-indicator.on {
+.statusIndicator.on {
     background-color: #2ecc71;
     color: white;
 }
 
-.status-indicator.off {
+.statusIndicator.off {
     background-color: #e74c3c;
     color: white;
 }
 
-/* Button Styling */
 button {
     background: #1abc9c;
     color: white;
@@ -118,7 +113,6 @@ button:hover {
     background: #16a085;
 }
 
-/* Responsive Design */
 @media (max-width: 768px) {
     .content {
         margin-left: 0;
@@ -138,13 +132,11 @@ button:hover {
         font-size: 12px;
     }
 
-    /* Adjust column widths for small devices */
-    .serial-column {
+    .serialColumn {
         width: 20%;
     }
 
-    /* Adjust sensor columns */
-    .sensor-header {
+    .sensorHeader {
         display: block;
         text-align: center;
     }

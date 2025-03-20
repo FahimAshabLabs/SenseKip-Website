@@ -35,7 +35,10 @@ export const updateUser = async (token, userId, updatedData) => {
     return response.data;
 };
 
+
 export const createUser = async (token, userData) => {
+    console.log("Sending user data:", userData); // Debugging step ✅
+
     try {
         const response = await axios.post(`${API_BASE_URL}/accounts/users/`, userData, {
             headers: {
@@ -44,16 +47,19 @@ export const createUser = async (token, userData) => {
             }
         });
 
-        if (!response.status === 201) {
+        console.log("Response:", response.data); // Debugging step ✅
+
+        if (response.status !== 201) {
             throw new Error('Failed to create user');
         }
 
         return response.data;
     } catch (error) {
-        console.error('Error creating user:', error);
+        console.error('Error creating user:', error.response?.data || error.message);
         throw error;
     }
 };
+
 
 export const fetchDevices = async (token) => {
     const response = await axios.get(`${API_BASE_URL}/dev/devices/`, {

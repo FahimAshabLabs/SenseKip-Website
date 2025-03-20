@@ -10,7 +10,7 @@
     justify-content: center;
 }
 
-.modal-content {
+.modalContent {
     background: #fff;
     padding: 20px;
     border-radius: 8px;
@@ -19,11 +19,11 @@
     text-align: center;
 }
 
-.modal-content h3 {
+.modalContent h3 {
     margin-bottom: 15px;
 }
 
-.modal-content input {
+.modalContent input {
     width: 80%;
     padding: 10px;
     margin: 10px 0;
@@ -31,14 +31,14 @@
     border-radius: 5px;
 }
 
-.modal-buttons {
+.modalButtons {
     display: flex;
     justify-content: space-between;
     margin-top: 10px;
 }
 
-.create-button {
-    background-color: #28a745;
+.createButton {
+    background-color: #141370;
     color: white;
     border: none;
     padding: 10px 15px;
@@ -46,7 +46,7 @@
     cursor: pointer;
 }
 
-.cancel-button {
+.cancelButton {
     background-color: #dc3545;
     color: white;
     border: none;
@@ -55,10 +55,10 @@
     cursor: pointer;
 }
 
-.create-button:hover {
+.createButton:hover {
     background-color: #218838;
 }
 
-.cancel-button:hover {
+.cancelButton:hover {
     background-color: #c82333;
 }

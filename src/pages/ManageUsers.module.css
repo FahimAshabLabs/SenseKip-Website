@@ -1,27 +1,33 @@
+
+
 .manage-users-container {
     display: flex;
+    flex-direction: column; /* Adjust for vertical alignment */
+    padding: 0 20px; /* Add horizontal padding */
+    margin-top: 60px; /* Create space for fixed navbar height */
+    background-color: rgb(252, 247, 247); /* Keeps the background consistent */
     height: 100vh;
-    background-color: white
 }
 
 .manage-users {
     padding: 20px;
-    background-color: white; /* Set background color to white */
+    background-color: white; 
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .manage-users-page {
     display: flex;
+    flex-direction: column; /* Ensures proper layout */
 }
 
 .manage-users-content {
     flex: 1;
     padding: 20px;
-    background-color: white; /* Set background color to white */
+    background-color: white; 
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    margin-left: 0; /* Adjust margin if needed */
+    margin-left: 0; 
 }
 
 .content {
@@ -32,7 +38,7 @@
 table {
     width: 100%;
     border-collapse: collapse;
-    margin-top: 20px;
+    margin-top: 20px; /* Ensures proper spacing from elements above */
 }
 
 th, td {
@@ -81,3 +87,4 @@ button {
     color: red;
     font-size: 14px;
 }
+

@@ -1,0 +1,88 @@
+/* ProfessionalManageDevices.module.css */
+
+.proContainer {
+    display: flex;
+    flex-direction: column;  /* ✅ Stack items properly */
+    align-items: center;
+    width: 100%;
+    min-height: 100vh;
+    background-color: #f5f5f5;
+}
+
+/* ✅ Navbar - Full Width and Fixed */
+.proNavbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    background-color: #ffffff;
+    padding: 10px 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.proNavbarLeft {
+    display: flex;
+    align-items: center;
+}
+
+.proNavbarLeft img {
+    height: 50px;
+    margin-right: 10px;
+}
+
+.proNavbarRight {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.proNavbarRight img {
+    height: 30px;
+}
+
+.proNavbarRight a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+
+/* ✅ Fix Logout Button */
+.proLogoutButton {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.proLogoutButton:hover {
+    background-color: #c0392b;
+}
+
+/* ✅ Center Content and Fix Table */
+.devicesContent {
+    width: 80%;
+    margin-top: 20px;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.deviceTable {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.deviceTable th, .deviceTable td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+}
+
+.deviceTable th {
+    background-color: #3498db;
+    color: white;
+}

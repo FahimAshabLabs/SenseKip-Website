@@ -1,0 +1,122 @@
+/* .dashboardContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #f4f4f4;
+    font-family: Arial, sans-serif;
+}
+
+.mainContent {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    width: 900px;
+    text-align: center;
+}
+
+.mainContent h2 {
+    color: #333;
+    margin-bottom: 15px;
+}
+
+iframe {
+    border-radius: 5px;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.error {
+    color: red;
+    font-weight: bold;
+} */
+
+
+/* grafana.module.css */
+
+.dashboardContainer {
+    display: flex;
+    flex-direction: column; /* Ensure items are stacked properly */
+    align-items: center;
+    width: 100%;
+    min-height: 100vh;
+    background-color: #f5f5f5;
+}
+
+/* ✅ Navbar Styling - Full Width and Fixed */
+.proNavbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    background-color: #ffffff;
+    padding: 10px 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Left Section in Navbar */
+.proNavbarLeft {
+    display: flex;
+    align-items: center;
+}
+
+.proNavbarLeft img {
+    height: 50px;
+    margin-right: 10px;
+}
+
+/* Right Section in Navbar */
+.proNavbarRight {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.proNavbarRight img {
+    height: 30px;
+}
+
+.proNavbarRight a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+
+.proLogoutButton {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.proLogoutButton:hover {
+    background-color: #c0392b;
+}
+
+/* Content - Center the Dashboard */
+.mainContent {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    width: 900px;
+    text-align: center;
+}
+
+.mainContent h2 {
+    color: #333;
+    margin-bottom: 15px;
+}
+
+iframe {
+    border-radius: 5px;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.error {
+    color: red;
+    font-weight: bold;
+}
