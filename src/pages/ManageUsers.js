@@ -207,9 +207,6 @@ const ManageUsers = ({ user }) => {
             <Navbar />
             <div className={styles.content}>
                 <h2>Manage Users</h2>
-                <button className={styles["add-user-button"]} onClick={() => setShowCreateUserModal(true)}>
-                    + Add User
-                </button>
 
                 <table>
                     <thead>
@@ -248,6 +245,9 @@ const ManageUsers = ({ user }) => {
                         ))}
                     </tbody>
                 </table>
+                <button className={styles["add-user-button"]} onClick={() => setShowCreateUserModal(true)}>
+                    + Add User
+                </button>
             </div>
 
             {showCreateUserModal && (

@@ -57,7 +57,7 @@ const Navbar = () => {
 
             {/* Center Links */}
             <ul className={styles.navLinks}>
-                <li><Link to="/table" className={styles.navbarLink}><FaRegUser /> Profile</Link></li>
+                <li><Link to="/table" className={styles.navbarLink}><FaRegUser /> Monitoring Center</Link></li>
                 <li><Link to="/manage-users" className={styles.navbarLink}><MdManageAccounts /> Manage Users</Link></li>
                 <li><Link to="/manage-devices" className={styles.navbarLink}><MdDevices /> Manage Devices</Link></li>
                 <li><Link to="/table" className={styles.navbarLink}><MdSettings /> Settings</Link></li>

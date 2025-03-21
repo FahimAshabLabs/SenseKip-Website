@@ -8,6 +8,7 @@ import ManageDevices2 from './pages/TestPage';
 import ProfessionalDashboard from './professional/p_dashboard'; // Import Professional Dashboard
 import ProfessionalManageDevices from './professional/ProfessionalManageDevices'; // ✅ Import ProfessionalManageDevices
 import GrafanaDashboard from './professional/grafana';
+import LandingPage from './pages/landingpage';
 
 const App = () => {
     const [user, setUser] = useState(() => {
@@ -20,6 +21,7 @@ const App = () => {
         <Router>
             <Routes>
                 <Route path="/login" element={<Login setUser={setUser} />} />
+                <Route path="/landing" element={<LandingPage setUser={setUser} />} />
 
                 {/* Professional Dashboard - Only N4 users can access */}
                 <Route path="/professional-dashboard" element={

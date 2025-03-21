@@ -1,7 +1,7 @@
 .manageDevicesContainer {
     display: flex;
     height: 100vh;
-    background-color: #f4f6f9;
+    background-color: rgb(252, 247, 247);
     flex-direction: column; 
     margin-top: 60px;
 }
@@ -141,3 +141,24 @@ button:hover {
         text-align: center;
     }
 }
+
+
+
+.iconButton {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    transition: transform 0.3s ease, scale 0.2s ease; 
+  }
+  
+  .iconButton:hover {
+    background: none;
+    border: none;
+    opacity: 0.8;  
+    transform: scale(1.2);  
+  }
+  
+  .iconButton:focus {
+    outline: none; 
+  }

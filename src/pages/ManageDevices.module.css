@@ -136,7 +136,9 @@
     flex-direction: column; /* Align content vertically */
     padding: 20px;
     margin-top: 60px; /* Account for navbar height */
-    background-color: rgb(255, 247, 247); /* Similar to ManageUsers background */
+    /* background-color: rgb(255, 247, 247); Similar to ManageUsers background */
+    background-color: rgb(252, 247, 247);
+    
     height: 100vh; /* Full viewport height */
 }
 

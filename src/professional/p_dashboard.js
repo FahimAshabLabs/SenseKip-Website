@@ -74,8 +74,7 @@ const ProfessionalDashboard = () => {
               <th rowSpan="2">Serial Number</th>
               <th colSpan="3" > <FaThermometerHalf color="red" size={26} />Sensor 1 (psi)</th>
               <th colSpan="3">  <FaThermometerHalf color="red" size={26}  />Sensor 2 (psi)</th>
-              <th rowSpan="2"> 
-              Dashboard</th>
+              <th rowSpan="2"> Dashboard</th>
             </tr>
             <tr>
               

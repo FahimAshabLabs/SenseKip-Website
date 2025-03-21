@@ -1,69 +1,5 @@
-/* Login.module.css
-
-body {
-    background: linear-gradient(to right, #f2f0f5, #c6d2e7);
-    font-family: 'Arial', sans-serif;
-}
-
-.login-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-}
-
-.login-form {
-    background: #fff;
-    padding: 40px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    width: 300px;
-}
-
-.login-form h2 {
-    margin-bottom: 20px;
-    font-size: 24px;
-    color: #333;
-}
-
-.login-form input {
-    width: 100%;
-    padding: 10px;
-    margin: 10px 0;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 16px;
-}
-
-.login-form input:focus {
-    border-color: #6a11cb;
-    outline: none;
-}
-
-.login-form button {
-    background: #6a11cb;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background 0.3s;
-}
-
-.login-form button:hover {
-    background: #2575fc;
-}
-
-.error {
-    color: red;
-    margin-top: 10px;
-} */
-
-
-body1 {
-    background: linear-gradient(to right, #4facfe, #00f2fe); /* Elegant gradient */
+/* body1 {
+    background: linear-gradient(to right, #4facfe, #00f2fe); 
     font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
@@ -74,7 +10,6 @@ body1 {
     animation: gradientBackground 8s infinite alternate;
 }
 
-/* Gradient background animation */
 @keyframes gradientBackground {
     0% {
         background: linear-gradient(to right, #4facfe, #00f2fe);
@@ -106,7 +41,6 @@ body1 {
     animation: fadeIn 0.5s ease-in-out;
 }
 
-/* Form Heading */
 .loginForm h2 {
     margin-bottom: 10px;
     font-size: 20px;
@@ -121,7 +55,6 @@ body1 {
     font-size: 15px;
 }
 
-/* Toggle Button Slider for Corporate and Professional */
 .toggleContainer {
     display: flex;
     justify-content: space-between;
@@ -142,7 +75,7 @@ body1 {
     background: linear-gradient(to right, #6a11cb, #2575fc);
     border-radius: 50px;
     z-index: 1;
-    transition: all 0.5s ease; /* Smooth sliding effect */
+    transition: all 0.5s ease; 
     transform: translateX(0%);
 }
 
@@ -155,7 +88,7 @@ body1 {
     color: #666;
     font-size: 14px;
     font-weight: bold;
-    z-index: 2; /* Ensure button text stays on top */
+    z-index: 2; 
     cursor: pointer;
     transition: color 0.3s ease, transform 0.5s ease;
 }
@@ -165,14 +98,14 @@ body1 {
 }
 
 .toggleButton:first-child.active + .toggleButton:before {
-    transform: translateX(0); /* Corporate mode */
+    transform: translateX(0);
 }
 
 .toggleButton:last-child.active + .toggleButton:before {
-    transform: translateX(100%); /* Professional mode */
+    transform: translateX(100%); 
 }
 
-/* Input Fields */
+
 .input {
     width: 100%;
     padding: 12px;
@@ -185,11 +118,10 @@ body1 {
 
 .input:focus {
     border-color: #6a11cb;
-    box-shadow: 0 0 5px rgba(106, 17, 203, 0.5); /* Soft glow effect */
+    box-shadow: 0 0 5px rgba(106, 17, 203, 0.5); 
     outline: none;
 }
 
-/* Login Button */
 .button {
     width: 100%;
     padding: 12px;
@@ -210,7 +142,7 @@ body1 {
     box-shadow: 0 6px 15px rgba(67, 233, 123, 0.6);
 }
 
-/* Error Message */
+
 .error {
     color: #e74c3c;
     margin-top: 10px;
@@ -233,7 +165,7 @@ body1 {
     }
 }
 
-/* Additional Links */
+
 .links {
     margin-top: 20px;
     display: flex;
@@ -253,7 +185,6 @@ body1 {
     text-shadow: 0 0 8px rgba(37, 117, 252, 0.5);
 }
 
-/* Animations */
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -264,8 +195,219 @@ body1 {
 }
 
 .logo {
-    width: 300px; /* Set a fixed width */
-    height: auto; /* Maintain aspect ratio */
-    display: block; /* Ensures proper alignment */
-    margin: 0 auto 15px; /* Centers the logo */
+    width: 300px; 
+    height: auto; 
+    display: block; 
+    margin: 0 auto 15px;
+} */
+
+/* .loginContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    background: #886d6d;
+} */
+
+.loginContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    background: radial-gradient(circle at center, #ffffff, #f5f2ff, #eae6ff); /* Soft White-Violet Gradient */
+    box-shadow: 0px 0px 50px 15px rgba(180, 100, 255, 0.6); /* Violet Glow */
+    animation: glow 3s infinite alternate;
+}
+
+@keyframes glow {
+    0% { box-shadow: 0 0 20px rgba(160, 80, 255, 0.5); }
+    50% { box-shadow: 0 0 40px rgba(180, 100, 255, 0.8); }
+    100% { box-shadow: 0 0 20px rgba(160, 80, 255, 0.5); }
+}
+
+
+.loginForm {
+    background: #f8f5f5;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    width: 350px;
+    max-width: 90%;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.loginForm h2 {
+    margin-bottom: 10px;
+    font-size: 18px; /* Smaller text */
+    color: #2c3e50;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+}
+
+.loginForm p {
+    margin-bottom: 20px;
+    color: #7f8c8d;
+    font-size: 14px; /* Smaller text */
+}
+
+.toggleContainer {
+    display: flex;
+    justify-content: space-between;
+    background: #f1f1f1;
+    border-radius: 40px;
+    padding: 5px;
+    margin-bottom: 20px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.toggleContainer:before {
+    content: "";
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    background: #6a11cb; /* Fixed color, no gradient */
+    border-radius: 50px;
+    z-index: 1;
+    transition: all 0.3s ease; 
+    left: 0;
+    transform: translateX(var(--translation, 0%));
+}
+
+.toggleContainer:has(.toggleButton:last-child.active):before {
+    --translation: 100%;
+}
+
+.toggleButton {
+    flex: 1;
+    padding: 10px; /* Smaller padding */
+    border: none;
+    border-radius: 50px;
+    background: transparent;
+    color: #666;
+    font-size: 13px; /* Smaller text */
+    font-weight: 500;
+    z-index: 2; 
+    cursor: pointer;
+    transition: color 0.3s ease;
+    position: relative;
+    background: none;
+}
+
+.toggleButton:hover {
+    background: none; /* Ensure no background on hover */
+}
+
+.toggleButton.active {
+    color: white;
+}
+
+/* Fixed height form container to prevent size changes */
+.formContainer {
+    height: 180px; /* Fixed height that accommodates the larger form */
+    position: relative;
+    margin-bottom: 10px;
+}
+
+.form {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+}
+
+.input {
+    width: 100%;
+    padding: 10px; /* Smaller padding */
+    margin: 8px 0; /* Reduced margins */
+    border: 1px solid #ddd; /* Thinner border */
+    border-radius: 8px;
+    font-size: 14px; /* Smaller text */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.input:focus {
+    border-color: #6a11cb;
+    box-shadow: 0 0 5px rgba(106, 17, 203, 0.5); 
+    outline: none;
+}
+
+.button {
+    width: 100%;
+    padding: 10px; /* Smaller padding */
+    background: #6a11cb; /* Fixed color, no gradient */
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px; /* Smaller text */
+    cursor: pointer;
+    font-weight: 500;
+    transition: background 0.3s ease;
+    margin-top: 8px; /* Reduced margin */
+}
+
+.button:hover {
+    background: #5a0cb2; /* Darker fixed color when hovering */
+    transform: none; /* Remove scale transform on hover */
+    box-shadow: none; /* Remove box-shadow on hover */
+}
+
+.error {
+    color: #e74c3c;
+    margin-top: 10px;
+    font-size: 13px; /* Smaller text */
+    animation: shake 0.3s ease-in-out;
+}
+
+@keyframes shake {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    25% {
+        transform: translateX(-4px);
+    }
+    50% {
+        transform: translateX(4px);
+    }
+    75% {
+        transform: translateX(-4px);
+    }
+}
+
+.links {
+    margin-top: 30px; /* Increased margin as per your update */
+    display: flex;
+    flex-direction: column;
+    gap: 16px; /* Increased gap as per your update */
+}
+
+.links a {
+    color: #6a11cb;
+    text-decoration: none;
+    font-size: 13px; /* Smaller text */
+    transition: color 0.3s ease;
+}
+
+.links a:hover {
+    color: #5a0cb2; /* Darker fixed color when hovering */
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.logo {
+    width: 250px; 
+    height: auto; 
+    display: block; 
+    margin: 0 auto 15px;
 }
