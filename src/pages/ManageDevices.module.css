@@ -1,27 +1,28 @@
-/* .manageDevices {
+.manageDevices {
     padding: 20px;
-    background-color: rgb(99, 33, 33); 
+    background-color: rgb(252, 247, 247);
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 90%;  /* Set the main container to take 90% of the page width */
+    margin: 0 auto;  /* Center the container */
 }
 
-
 .manageDevicesPage {
-    margin-top: 60px; 
+    margin-top: 60px;
     padding: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-
 .manageDevicesContent {
     flex: 1;
     padding: 20px;
-    background-color: rgb(158, 114, 114); 
+    background-color: rgb(252, 247, 247);
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    margin-left: 0; 
+    width: 90%;  /* Set content container to take 90% of the page width */
+    margin: 0 auto;  /* Center the content */
 }
 
 .addDeviceButton {
@@ -104,7 +105,7 @@
 }
 
 .deviceTable {
-    width: 100%;
+    width: 100%;  /* Table takes up 100% of the container's width */
     border-collapse: collapse;
     margin-top: 20px;
 }
@@ -128,26 +129,26 @@
 .assignDropdown {
     margin: 5px;
     padding: 5px;
-} */
-
-
-.manage-devices-container {
-    display: flex;
-    flex-direction: column; /* Align content vertically */
-    padding: 20px;
-    margin-top: 60px; /* Account for navbar height */
-    /* background-color: rgb(255, 247, 247); Similar to ManageUsers background */
-    background-color: rgb(252, 247, 247);
-    
-    height: 100vh; /* Full viewport height */
 }
 
+
+/* working belowww  */
+
+/* .manage-devices-container {
+    display: flex;
+    flex-direction: column; 
+    padding: 20px;
+    margin-top: 80px; 
+    background-color: rgb(252, 247, 247);
+    height: 100vh; 
+}
 .manage-devices-content {
     flex: 1;
     padding: 20px;
     background-color: white; 
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    
 }
 
 .device-table {
@@ -216,4 +217,4 @@
 .error-message {
     color: red;
     font-size: 14px;
-}
+} */

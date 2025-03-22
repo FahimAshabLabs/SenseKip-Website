@@ -1,199 +1,3 @@
-// import React, { useState } from 'react';
-// import { motion } from 'framer-motion';
-// import styles from './landingpage.module.css';
-
-// const LandingPage = () => {
-//   const [formData, setFormData] = useState({
-//     name: '',
-//     email: '',
-//     message: ''
-//   });
-
-//   const handleChange = (e) => {
-//     const { name, value } = e.target;
-//     setFormData(prevState => ({
-//       ...prevState,
-//       [name]: value
-//     }));
-//   };
-
-//   const handleSubmit = (e) => {
-//     e.preventDefault();
-//     console.log('Form submitted:', formData);
-//     // Here you would typically send the data to your backend
-//     alert('Registration successful! We will contact you shortly.');
-//     setFormData({ name: '', email: '', message: '' });
-//   };
-
-//   return (
-//     <div className={styles.container}>
-//       <div className={styles.backgroundGradient}></div>
-//       <div className={styles.glowEffect1}></div>
-//       <div className={styles.glowEffect2}></div>
-      
-//       {/* Header */}
-//       <header className={styles.header}>
-//         <motion.div 
-//           className={styles.logo}
-//           initial={{ opacity: 0, y: -20 }}
-//           animate={{ opacity: 1, y: 0 }}
-//           transition={{ duration: 0.6 }}
-//         >
-//           Sensekip
-//         </motion.div>
-//         <motion.button 
-//           className={styles.loginButton}
-//           initial={{ opacity: 0, y: -20 }}
-//           animate={{ opacity: 1, y: 0 }}
-//           transition={{ duration: 0.6, delay: 0.2 }}
-//           whileHover={{ scale: 1.05 }}
-//           whileTap={{ scale: 0.95 }}
-//         >
-//           Login
-//         </motion.button>
-//       </header>
-
-//       {/* Main Content */}
-//       <main className={styles.mainContent}>
-//         {/* Hero Section */}
-//         <section className={styles.heroSection}>
-//           <motion.h1 
-//             className={styles.heroTitle}
-//             initial={{ opacity: 0, y: 20 }}
-//             animate={{ opacity: 1, y: 0 }}
-//             transition={{ duration: 0.8, delay: 0.3 }}
-//           >
-//             Monitor Your IoT Devices with Ease
-//           </motion.h1>
-//           <motion.p 
-//             className={styles.heroDescription}
-//             initial={{ opacity: 0, y: 20 }}
-//             animate={{ opacity: 1, y: 0 }}
-//             transition={{ duration: 0.8, delay: 0.5 }}
-//           >
-//             Sensekip provides a comprehensive solution for monitoring and managing your IoT infrastructure.
-//           </motion.p>
-          
-//           <motion.button
-//             className={styles.secondaryButton}
-//             initial={{ opacity: 0, y: 20 }}
-//             animate={{ opacity: 1, y: 0 }}
-//             transition={{ duration: 0.8, delay: 0.7 }}
-//             whileHover={{ scale: 1.05 }}
-//             whileTap={{ scale: 0.95 }}
-//           >
-//             Login to Sensekip
-//           </motion.button>
-//         </section>
-        
-//         {/* Registration Form */}
-//         <motion.section 
-//           className={styles.formSection}
-//           initial={{ opacity: 0, scale: 0.9 }}
-//           animate={{ opacity: 1, scale: 1 }}
-//           transition={{ duration: 0.8, delay: 0.7 }}
-//         >
-//           <div className={styles.glassContainer}>
-//             <h2 className={styles.formTitle}>Corporate Admin Registration</h2>
-//             <p className={styles.formSubtitle}>
-//               To register as a corporate administrator, please fill out the form below. Our team will contact you shortly.
-//             </p>
-//             <form onSubmit={handleSubmit} className={styles.form}>
-//               <div className={styles.formGroup}>
-//                 <label htmlFor="name">Full Name</label>
-//                 <input
-//                   type="text"
-//                   id="name"
-//                   name="name"
-//                   value={formData.name}
-//                   onChange={handleChange}
-//                   required
-//                   placeholder="Enter your full name"
-//                 />
-//               </div>
-              
-//               <div className={styles.formGroup}>
-//                 <label htmlFor="email">Email Address</label>
-//                 <input
-//                   type="email"
-//                   id="email"
-//                   name="email"
-//                   value={formData.email}
-//                   onChange={handleChange}
-//                   required
-//                   placeholder="Enter your corporate email"
-//                 />
-//               </div>
-              
-//               <div className={styles.formGroup}>
-//                 <label htmlFor="message">Message</label>
-//                 <textarea
-//                   id="message"
-//                   name="message"
-//                   value={formData.message}
-//                   onChange={handleChange}
-//                   placeholder="Tell us about your IoT monitoring needs"
-//                   rows="4"
-//                 />
-//               </div>
-              
-//               <motion.button 
-//                 type="submit" 
-//                 className={styles.submitButton}
-//                 whileHover={{ scale: 1.03 }}
-//                 whileTap={{ scale: 0.97 }}
-//               >
-//                 Request Access
-//               </motion.button>
-//             </form>
-//           </div>
-//         </motion.section>
-//       </main>
-      
-//       {/* Footer */}
-//       <footer className={styles.footer}>
-//         <div className={styles.footerContent}>
-//           <div className={styles.footerSection}>
-//             <h3>Contact Us</h3>
-//             <ul>
-//               <li>
-//                 <span className={styles.footerIcon}>✉️</span>
-//                 <a href="mailto:info@sensekip.com">info@sensekip.com</a>
-//               </li>
-//               <li>
-//                 <span className={styles.footerIcon}>📞</span>
-//                 <span>+1 555-123-4567</span>
-//               </li>
-//               <li>
-//                 <span className={styles.footerIcon}>📍</span>
-//                 <address>
-//                   123 IoT Avenue, Tech City, State, 12345<br />
-//                   United States
-//                 </address>
-//               </li>
-//             </ul>
-//           </div>
-          
-//           <div className={styles.footerSection}>
-//             <h3>Quick Links</h3>
-//             <ul>
-//               <li><a href="#">About Us</a></li>
-//               <li><a href="#">Services</a></li>
-//               <li><a href="#">Privacy Policy</a></li>
-//               <li><a href="#">Terms of Service</a></li>
-//             </ul>
-//           </div>
-//         </div>
-        
-//         <div className={styles.footerBottom}>
-//           <p>© 2025 Sensekip. All rights reserved.</p>
-//         </div>
-//       </footer>
-//     </div>
-//   );
-// };
-
-// export default LandingPage;
 
 
 import React, {useState } from 'react';
@@ -205,7 +9,7 @@ import av1 from "../figures/av1.jpg";
 import av2 from "../figures/av2.jpg";
 import ibm from "../figures/ibmm.jpg";
 import microsoft from "../figures/micro.png";
-import openai from "../figures/openai.png";
+import sense from "../figures/sense.jpg";
 
 const LandingPage = () => {
   const navigate = useNavigate();
@@ -709,11 +513,10 @@ const LandingPage = () => {
       <section className={styles.partnersSection}>
         <h3>Trusted by Industry Leaders</h3>
         <div className={styles.partnersLogos}>
-          <img src="/api/placeholder/120/40" alt="Partner 1" />
-          <img src="/api/placeholder/120/40" alt="Partner 2" />
-          <img src="/api/placeholder/120/40" alt="Partner 3" />
-          <img src="/api/placeholder/120/40" alt="Partner 4" />
-          <img src="/api/placeholder/120/40" alt="Partner 5" />
+          <img src={microsoft} alt="Partner 1" />
+          <img src={microsoft} alt="Partner 2" />
+          <img src={microsoft} alt="Partner 3" />
+          
         </div>
       </section>
       
@@ -722,8 +525,8 @@ const LandingPage = () => {
         <div className={styles.footerContent}>
           <div className={styles.footerSection}>
             <div className={styles.footerLogo}>
-              <img src="/api/placeholder/40/40" alt="Sensekip Logo" />
-              Sensekip
+              <img src={sense} alt="Sensekip Logo" />
+              {/* Sensekip */}
             </div>
             <p className={styles.footerDescription}>
               Leading the IoT monitoring revolution with cutting-edge technology for enterprise clients.
@@ -771,7 +574,7 @@ const LandingPage = () => {
                 <span className={styles.footerIcon}>📍</span>
                 <address>
                   123 IoT Avenue, Tech City, State, 12345<br />
-                  United States
+                  Brazil
                 </address>
               </li>
             </ul>
