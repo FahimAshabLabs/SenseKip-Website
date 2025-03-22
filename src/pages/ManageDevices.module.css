@@ -1,10 +1,10 @@
-.manageDevices {
+/* .manageDevices {
     padding: 20px;
     background-color: rgb(252, 247, 247);
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    width: 90%;  /* Set the main container to take 90% of the page width */
-    margin: 0 auto;  /* Center the container */
+    width: 90%; 
+    margin: 0 auto; 
 }
 
 .manageDevicesPage {
@@ -21,8 +21,8 @@
     background-color: rgb(252, 247, 247);
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    width: 90%;  /* Set content container to take 90% of the page width */
-    margin: 0 auto;  /* Center the content */
+    width: 90%;  
+    margin: 0 auto;  
 }
 
 .addDeviceButton {
@@ -105,7 +105,7 @@
 }
 
 .deviceTable {
-    width: 100%;  /* Table takes up 100% of the container's width */
+    width: 100%;  
     border-collapse: collapse;
     margin-top: 20px;
 }
@@ -129,79 +129,72 @@
 .assignDropdown {
     margin: 5px;
     padding: 5px;
-}
+} */
 
 
-/* working belowww  */
-
-/* .manage-devices-container {
-    display: flex;
-    flex-direction: column; 
+.manageDevices {
     padding: 20px;
-    margin-top: 80px; 
     background-color: rgb(252, 247, 247);
-    height: 100vh; 
-}
-.manage-devices-content {
-    flex: 1;
-    padding: 20px;
-    background-color: white; 
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    
+    width: 90%; 
+    margin: 0 auto; 
 }
 
-.device-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
-}
-
-.device-table th, .device-table td {
-    border: 1px solid #ddd;
-    padding: 10px;
-    text-align: left;
-}
-
-.device-table th {
-    background-color: #f2f2f2;
-}
-
-.add-device-button {
-    background-color: #1abc9c;
-    color: white;
-    padding: 10px 15px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-bottom: 15px;
-    transition: background 0.3s, transform 0.2s;
-}
-
-.add-device-button:hover {
-    background-color: #16a085;
-    transform: scale(1.05);
-}
-
-.input-box {
-    margin-top: 20px;
+.manageDevicesPage {
+    margin-top: 60px;
+    padding: 20px;
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    align-items: center;
 }
 
-.input-box input {
+.manageDevicesContent {
+    flex: 1;
+    padding: 20px;
+    background-color: rgb(252, 247, 247);
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 90%;  
+    margin: 0 auto;  
+}
+
+/* Controls Row Styling */
+.controlsRow {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.searchFilterContainer {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.searchInput {
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
     font-size: 14px;
+    min-width: 200px;
 }
 
-.input-box button {
-    background-color: #3498db;
+.filterSelect {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    min-width: 150px;
+}
+
+.addDeviceButton {
+    background-color: #1abc9c;
     color: white;
     border: none;
-    padding: 10px 15px;
+    padding: 10px 20px;
     border-radius: 5px;
     cursor: pointer;
     transition: background 0.3s, transform 0.2s;
@@ -209,12 +202,288 @@
     font-weight: bold;
 }
 
-.input-box button:hover {
+.addDeviceButton:hover {
+    background-color: #16a085;
+    transform: scale(1.05);
+}
+
+.bulkAssignButton {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.bulkAssignButton:hover {
     background-color: #2980b9;
     transform: scale(1.05);
 }
 
-.error-message {
-    color: red;
+.inputBox {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background-color: #f8f9fa;
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid #e9ecef;
+}
+
+.inputBox input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
     font-size: 14px;
-} */
+}
+
+.inputBox button {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+    font-size: 14px;
+    font-weight: bold;
+    align-self: flex-start;
+}
+
+.inputBox button:hover {
+    background-color: #2980b9;
+    transform: scale(1.05);
+}
+
+.inputBox button:last-child {
+    background-color: #95a5a6;
+    margin-left: 10px;
+}
+
+.inputBox button:last-child:hover {
+    background-color: #7f8c8d;
+}
+
+.manageDevices ul {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0 0 0;
+}
+
+.manageDevices li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+}
+
+.manageDevices li button {
+    margin-left: 10px;
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+    font-size: 12px;
+}
+
+.manageDevices li button:hover {
+    background-color: #c0392b;
+    transform: scale(1.05);
+}
+
+.deviceTable {
+    width: 100%;  
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.deviceTable th, .deviceTable td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+}
+
+.deviceTable th {
+    background-color: #f2f2f2;
+    cursor: pointer;
+    user-select: none;
+}
+
+.deviceTable th:hover {
+    background-color: #e6e6e6;
+}
+
+.editButton, .deleteButton, .assignButton {
+    margin: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+    border: none;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.editButton {
+    background-color: #3498db;
+    color: white;
+}
+
+.editButton:hover {
+    background-color: #2980b9;
+}
+
+.deleteButton {
+    background-color: #e74c3c;
+    color: white;
+}
+
+.deleteButton:hover {
+    background-color: #c0392b;
+}
+
+.assignButton {
+    background-color: #2ecc71;
+    color: white;
+}
+
+.assignButton:hover {
+    background-color: #27ae60;
+}
+
+.assignDropdown {
+    margin: 5px;
+    padding: 5px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+
+/* Modal styling */
+.modalOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 500px;
+    max-width: 90%;
+    padding: 20px;
+}
+
+.modal h3 {
+    margin-top: 0;
+    color: #2c3e50;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+}
+
+.modalContent {
+    margin-top: 20px;
+}
+
+.inputGroup {
+    margin-bottom: 15px;
+}
+
+.inputGroup label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #555;
+}
+
+.rangeInputs {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.rangeInputs input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.rangeInputs span {
+    color: #7f8c8d;
+}
+
+.inputGroup select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.modalActions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.cancelButton, .confirmButton {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.cancelButton {
+    background-color: #95a5a6;
+    color: white;
+}
+
+.cancelButton:hover {
+    background-color: #7f8c8d;
+}
+
+.confirmButton {
+    background-color: #3498db;
+    color: white;
+}
+
+.confirmButton:hover {
+    background-color: #2980b9;
+}
+
+.error {
+    color: #e74c3c;
+    background-color: #fadbd8;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 10px 0;
+    text-align: center;
+}
+
+.success {
+    color: #27ae60;
+    background-color: #d4efdf;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 10px 0;
+    text-align: center;
+}
