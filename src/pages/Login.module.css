@@ -1,223 +1,11 @@
-/* body1 {
-    background: linear-gradient(to right, #4facfe, #00f2fe); 
-    font-family: 'Poppins', sans-serif;
-    margin: 0;
-    padding: 0;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    animation: gradientBackground 8s infinite alternate;
-}
-
-@keyframes gradientBackground {
-    0% {
-        background: linear-gradient(to right, #4facfe, #00f2fe);
-    }
-    50% {
-        background: linear-gradient(to right, #43e97b, #38f9d7);
-    }
-    100% {
-        background: linear-gradient(to right, #fa709a, #fee140);
-    }
-}
-
-.loginContainer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    width: 100%;
-}
-
-.loginForm {
-    background: #f8f5f5;
-    padding: 40px;
-    border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-    text-align: center;
-    width: 350px;
-    max-width: 90%;
-    animation: fadeIn 0.5s ease-in-out;
-}
-
-.loginForm h2 {
-    margin-bottom: 10px;
-    font-size: 20px;
-    color: #2c3e50;
-    font-weight: bold;
-    letter-spacing: 1px;
-}
-
-.loginForm p {
-    margin-bottom: 20px;
-    color: #7f8c8d;
-    font-size: 15px;
-}
-
-.toggleContainer {
-    display: flex;
-    justify-content: space-between;
-    background: #f1f1f1;
-    border-radius: 50px;
-    padding: 5px;
-    margin-bottom: 20px;
-    position: relative;
-    overflow: hidden;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.toggleContainer:before {
-    content: "";
-    position: absolute;
-    width: 50%;
-    height: 100%;
-    background: linear-gradient(to right, #6a11cb, #2575fc);
-    border-radius: 50px;
-    z-index: 1;
-    transition: all 0.5s ease; 
-    transform: translateX(0%);
-}
-
-.toggleButton {
-    flex: 1;
-    padding: 12px 15px;
-    border: none;
-    border-radius: 50px;
-    background: transparent;
-    color: #666;
-    font-size: 14px;
-    font-weight: bold;
-    z-index: 2; 
-    cursor: pointer;
-    transition: color 0.3s ease, transform 0.5s ease;
-}
-
-.toggleButton.active {
-    color: white;
-}
-
-.toggleButton:first-child.active + .toggleButton:before {
-    transform: translateX(0);
-}
-
-.toggleButton:last-child.active + .toggleButton:before {
-    transform: translateX(100%); 
-}
-
-
-.input {
-    width: 100%;
-    padding: 12px;
-    margin: 10px 0;
-    border: 2px solid #ddd;
-    border-radius: 10px;
-    font-size: 15px;
-    transition: border-color 0.3s ease, box-shadow 0.3s ease;
-}
-
-.input:focus {
-    border-color: #6a11cb;
-    box-shadow: 0 0 5px rgba(106, 17, 203, 0.5); 
-    outline: none;
-}
-
-.button {
-    width: 100%;
-    padding: 12px;
-    background: linear-gradient(to right, #6a11cb, #2575fc);
-    color: white;
-    border: none;
-    border-radius: 10px;
-    font-size: 16px;
-    cursor: pointer;
-    font-weight: bold;
-    transition: background 0.3s ease, transform 0.2s ease;
-    margin-top: 10px;
-}
-
-.button:hover {
-    background: linear-gradient(to right, #43e97b, #38f9d7);
-    transform: scale(1.05);
-    box-shadow: 0 6px 15px rgba(67, 233, 123, 0.6);
-}
-
-
-.error {
-    color: #e74c3c;
-    margin-top: 10px;
-    font-size: 14px;
-    animation: shake 0.3s ease-in-out;
-}
-
-@keyframes shake {
-    0%, 100% {
-        transform: translateX(0);
-    }
-    25% {
-        transform: translateX(-4px);
-    }
-    50% {
-        transform: translateX(4px);
-    }
-    75% {
-        transform: translateX(-4px);
-    }
-}
-
-
-.links {
-    margin-top: 20px;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-.links a {
-    color: #6a11cb;
-    text-decoration: none;
-    font-size: 14px;
-    transition: color 0.3s ease;
-}
-
-.links a:hover {
-    color: #2575fc;
-    text-shadow: 0 0 8px rgba(37, 117, 252, 0.5);
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
-}
-
-.logo {
-    width: 300px; 
-    height: auto; 
-    display: block; 
-    margin: 0 auto 15px;
-} */
-
 /* .loginContainer {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
     width: 100%;
-    background: #886d6d;
-} */
-
-.loginContainer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    width: 100%;
-    background: radial-gradient(circle at center, #ffffff, #f5f2ff, #eae6ff); /* Soft White-Violet Gradient */
-    box-shadow: 0px 0px 50px 15px rgba(180, 100, 255, 0.6); /* Violet Glow */
+    background: radial-gradient(circle at center, #ffffff, #f5f2ff, #eae6ff); 
+    box-shadow: 0px 0px 50px 15px rgba(180, 100, 255, 0.6); 
     animation: glow 3s infinite alternate;
 }
 
@@ -241,7 +29,7 @@
 
 .loginForm h2 {
     margin-bottom: 10px;
-    font-size: 18px; /* Smaller text */
+    font-size: 18px; 
     color: #2c3e50;
     font-weight: bold;
     letter-spacing: 0.5px;
@@ -250,7 +38,7 @@
 .loginForm p {
     margin-bottom: 20px;
     color: #7f8c8d;
-    font-size: 14px; /* Smaller text */
+    font-size: 14px; 
 }
 
 .toggleContainer {
@@ -270,7 +58,7 @@
     position: absolute;
     width: 50%;
     height: 100%;
-    background: #6a11cb; /* Fixed color, no gradient */
+    background: #6a11cb;
     border-radius: 50px;
     z-index: 1;
     transition: all 0.3s ease; 
@@ -284,12 +72,12 @@
 
 .toggleButton {
     flex: 1;
-    padding: 10px; /* Smaller padding */
+    padding: 10px; 
     border: none;
     border-radius: 50px;
     background: transparent;
     color: #666;
-    font-size: 13px; /* Smaller text */
+    font-size: 13px;
     font-weight: 500;
     z-index: 2; 
     cursor: pointer;
@@ -299,16 +87,15 @@
 }
 
 .toggleButton:hover {
-    background: none; /* Ensure no background on hover */
+    background: none; 
 }
 
 .toggleButton.active {
     color: white;
 }
 
-/* Fixed height form container to prevent size changes */
 .formContainer {
-    height: 180px; /* Fixed height that accommodates the larger form */
+    height: 180px; 
     position: relative;
     margin-bottom: 10px;
 }
@@ -322,11 +109,11 @@
 
 .input {
     width: 100%;
-    padding: 10px; /* Smaller padding */
-    margin: 8px 0; /* Reduced margins */
-    border: 1px solid #ddd; /* Thinner border */
+    padding: 10px;
+    margin: 8px 0; 
+    border: 1px solid #ddd; 
     border-radius: 8px;
-    font-size: 14px; /* Smaller text */
+    font-size: 14px; 
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -338,28 +125,28 @@
 
 .button {
     width: 100%;
-    padding: 10px; /* Smaller padding */
-    background: #6a11cb; /* Fixed color, no gradient */
+    padding: 10px; 
+    background: #6a11cb; 
     color: white;
     border: none;
     border-radius: 8px;
-    font-size: 14px; /* Smaller text */
+    font-size: 14px; 
     cursor: pointer;
     font-weight: 500;
     transition: background 0.3s ease;
-    margin-top: 8px; /* Reduced margin */
+    margin-top: 8px; 
 }
 
 .button:hover {
-    background: #5a0cb2; /* Darker fixed color when hovering */
-    transform: none; /* Remove scale transform on hover */
-    box-shadow: none; /* Remove box-shadow on hover */
+    background: #5a0cb2; 
+    transform: none; 
+    box-shadow: none; 
 }
 
 .error {
     color: #e74c3c;
     margin-top: 10px;
-    font-size: 13px; /* Smaller text */
+    font-size: 13px; 
     animation: shake 0.3s ease-in-out;
 }
 
@@ -379,21 +166,21 @@
 }
 
 .links {
-    margin-top: 30px; /* Increased margin as per your update */
+    margin-top: 30px; 
     display: flex;
     flex-direction: column;
-    gap: 16px; /* Increased gap as per your update */
+    gap: 16px; 
 }
 
 .links a {
     color: #6a11cb;
     text-decoration: none;
-    font-size: 13px; /* Smaller text */
+    font-size: 13px; 
     transition: color 0.3s ease;
 }
 
 .links a:hover {
-    color: #5a0cb2; /* Darker fixed color when hovering */
+    color: #5a0cb2; 
 }
 
 @keyframes fadeIn {
@@ -410,4 +197,428 @@
     height: auto; 
     display: block; 
     margin: 0 auto 15px;
+} */
+
+/* 
+
+.loginContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    background: linear-gradient(135deg, #f5f7fa 0%, #e4eaff 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.loginContainer::before {
+    content: '';
+    position: absolute;
+    width: 150%;
+    height: 150%;
+    background: radial-gradient(circle at center, rgba(106, 17, 203, 0.1), transparent 60%);
+    animation: pulse 15s infinite alternate;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); opacity: 0.5; }
+    100% { transform: scale(1.1); opacity: 0.8; }
+}
+
+.loginForm {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 40px;
+    border-radius: 24px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 380px;
+    max-width: 90%;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    z-index: 10;
+}
+
+.loginForm h2 {
+    margin-bottom: 15px;
+    font-size: 24px;
+    color: #2c3e50;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.toggleContainer {
+    display: flex;
+    justify-content: space-between;
+    background: #f5f5f7;
+    border-radius: 16px;
+    padding: 5px;
+    margin-bottom: 25px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+.toggleContainer:before {
+    content: "";
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(135deg, #6a11cb, #8a4fff);
+    border-radius: 12px;
+    z-index: 1;
+    transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+    left: 0;
+    transform: translateX(var(--translation, 0%));
+}
+
+.toggleContainer:has(.toggleButton:last-child.active):before {
+    --translation: 100%;
+}
+
+.toggleButton {
+    flex: 1;
+    padding: 12px;
+    border: none;
+    border-radius: 12px;
+    background: transparent;
+    color: #666;
+    font-size: 14px;
+    font-weight: 600;
+    z-index: 2;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    position: relative;
+}
+
+.toggleButton.active {
+    color: white;
+}
+
+.formContainer {
+    height: 210px;
+    position: relative;
+    margin-bottom: 15px;
+}
+
+.form {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.inputWrapper {
+    position: relative;
+    width: 100%;
+}
+
+.input {
+    width: 100%;
+    padding: 14px 16px;
+    border: 2px solid #eaeaea;
+    border-radius: 12px;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    background-color: #f9f9fa;
+}
+
+.input:focus {
+    border-color: #6a11cb;
+    box-shadow: 0 0 0 4px rgba(106, 17, 203, 0.15);
+    outline: none;
+    background-color: white;
+}
+
+.input::placeholder {
+    color: #aab;
+}
+
+.button {
+    width: 100%;
+    padding: 14px;
+    background: linear-gradient(135deg, #6a11cb, #8a4fff);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 5px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 48px;
+}
+
+.button:not(:disabled):hover {
+    transform: translateY(-2px);
+    box-shadow: 0 7px 14px rgba(106, 17, 203, 0.2);
+}
+
+.button:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+.error {
+    color: #ff3a5e;
+    margin-top: 10px;
+    font-size: 14px;
+    font-weight: 500;
+    background-color: rgba(255, 58, 94, 0.1);
+    border-radius: 8px;
+    padding: 10px;
+    animation: shake 0.5s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
+    20%, 40%, 60%, 80% { transform: translateX(5px); }
+}
+
+.links {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.links a {
+    color: #6a11cb;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.links a:hover {
+    color: #8a4fff;
+    text-decoration: underline;
+}
+
+.logo {
+    width: 220px;
+    height: auto;
+    display: block;
+    margin: 0 auto 25px;
+    filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1));
+} */
+
+
+.loginContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    background: linear-gradient(135deg, #f5f7fa 0%, #e4eaff 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.loginContainer::before {
+    content: '';
+    position: absolute;
+    width: 150%;
+    height: 150%;
+    background: radial-gradient(circle at center, rgba(106, 17, 203, 0.1), transparent 60%);
+    animation: pulse 15s infinite alternate;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); opacity: 0.5; }
+    100% { transform: scale(1.1); opacity: 0.8; }
+}
+
+.loginForm {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 340px;
+    max-width: 90%;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    z-index: 10;
+}
+
+.loginForm h2 {
+    margin-bottom: 15px;
+    font-size: 20px;
+    color: #2c3e50;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.toggleContainer {
+    display: flex;
+    justify-content: space-between;
+    background: #f5f5f7;
+    border-radius: 12px;
+    padding: 3px;
+    margin-bottom: 20px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.toggleContainer:before {
+    content: "";
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(135deg, #6a11cb, #8a4fff);
+    border-radius: 10px;
+    z-index: 1;
+    transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+    left: 0;
+    transform: translateX(var(--translation, 0%));
+}
+
+.toggleContainer:has(.toggleButton:last-child.active):before {
+    --translation: 100%;
+}
+
+.toggleButton {
+    flex: 1;
+    padding: 8px 10px;
+    border: none;
+    border-radius: 10px;
+    background: transparent;
+    color: #666;
+    font-size: 13px;
+    font-weight: 500;
+    z-index: 2;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    position: relative;
+}
+
+.toggleButton.active {
+    color: white;
+}
+
+.formContainer {
+    height: 180px;
+    position: relative;
+    margin-bottom: 10px;
+}
+
+.form {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.inputWrapper {
+    position: relative;
+    width: 100%;
+}
+
+.input {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #eaeaea;
+    border-radius: 10px;
+    font-size: 13px;
+    transition: all 0.3s ease;
+    background-color: #f9f9fa;
+}
+
+.input:focus {
+    border-color: #6a11cb;
+    box-shadow: 0 0 0 3px rgba(106, 17, 203, 0.15);
+    outline: none;
+    background-color: white;
+}
+
+.input::placeholder {
+    color: #aab;
+    font-size: 13px;
+}
+
+.button {
+    width: 100%;
+    padding: 10px;
+    background: linear-gradient(135deg, #6a11cb, #8a4fff);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 5px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 42px;
+}
+
+.button:not(:disabled):hover {
+    transform: translateY(-1px);
+    box-shadow: 0 5px 10px rgba(106, 17, 203, 0.2);
+}
+
+.button:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+.error {
+    color: #ff3a5e;
+    margin-top: 8px;
+    font-size: 12px;
+    font-weight: 500;
+    background-color: rgba(255, 58, 94, 0.1);
+    border-radius: 6px;
+    padding: 8px;
+    animation: shake 0.5s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    10%, 30%, 50%, 70%, 90% { transform: translateX(-3px); }
+    20%, 40%, 60%, 80% { transform: translateX(3px); }
+}
+
+.links {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.links a {
+    color: #6a11cb;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.links a:hover {
+    color: #8a4fff;
+    text-decoration: underline;
+}
+
+.logo {
+    width: 180px;
+    height: auto;
+    display: block;
+    margin: 0 auto 20px;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
 }

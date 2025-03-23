@@ -21,7 +21,7 @@ const App = () => {
         <Router>
             <Routes>
                 <Route path="/login" element={<Login setUser={setUser} />} />
-                <Route path="/landing" element={<LandingPage setUser={setUser} />} />
+                <Route path="/" element={<LandingPage setUser={setUser} />} />
 
                 {/* Professional Dashboard - Only N4 users can access */}
                 <Route path="/professional-dashboard" element={
